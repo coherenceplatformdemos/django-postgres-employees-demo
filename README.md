@@ -74,19 +74,25 @@ Fork the repository to your GitHub account. To test locally, clone the forked re
     }
     ```
 
-4. **Build and run the Docker container:**
+4. **Add localhost to the Allowed Hosts**
+
+```python
+ALLOWED_HOSTS = [os.environ.get('CNC_ENVIRONMENT_DOMAIN'), "localhost"]
+```
+
+5. Build and run the Docker container:
 
     ```bash
     docker-compose up --build
     ```
 
-5. **Run database migrations:**
+6. Run database migrations:
 
     ```bash
     docker-compose run web python manage.py migrate
     ```
 
-6. **Access the application:**
+7. Access the application:
 
     Open your browser and navigate to `http://localhost:8000/`.
 
