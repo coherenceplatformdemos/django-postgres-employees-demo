@@ -43,8 +43,8 @@ Fork the repository to your GitHub account. To test locally, clone the forked re
 1. **Clone the repository:**
 
     ```bash
-    git clone <repository_url>
-    cd django_postgres_employee_app
+    git clone https://github.com/<your_github_username>/django-postgres-employee-demo.git
+    cd django-postgres-employee-demo
     ```
 
 2. Add your database credentials to the `docker-compose.yml` file:
