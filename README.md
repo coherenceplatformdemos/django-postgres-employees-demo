@@ -1,8 +1,37 @@
-# Employee Management Application
+<p align="center">
+  <a href="https://www.withcoherence.com">
+    <img alt="Coherence Logo" title="Coherence" src="./logo.png" width="400" style="color: black">
+  </a>
+</p>
 
-A Django-based web application for managing employees. The application supports adding, editing, and deleting employees, and displays a list of all employees.
 
-## Setup
+<p align="center">
+  <i>Platform-as-a-service in your own Cloud</i><br/> 
+  <a href="https://www.withcoherence.com">withcoherence.com</a>
+</p>
+
+<h1 align="center">
+Django and Postgres Example
+</h1>
+
+<p align="center">
+<img src="https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white">
+<img src="https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white">
+</p>
+
+<br/>
+
+# Full stack Django and Postgres application (employee management)
+
+<p>
+This is the code to accompany the tutorial available at our <a href="https://docs.withcoherence.com/coherence-templates/full-stack-template/?tabs=django">Framework Guide (Django)</a> page.
+</p>
+
+You can use it as a starting point for any full stack Django application. Read the guide to see how to deploy it to a production environment in your own cloud, or see the instructions below to run a development version of it locally.
+
+## Getting Started 
+
+Fork the repository to your GitHub account. To test locally, clone the forked repository to your machine. You will need to have Docker installed.
 
 ### Prerequisites
 
@@ -14,8 +43,8 @@ A Django-based web application for managing employees. The application supports 
 1. **Clone the repository:**
 
     ```bash
-    git clone <repository_url>
-    cd django_postgres_employee_app
+    git clone https://github.com/<your_github_username>/django-postgres-employees-demo.git
+    cd django-postgres-employees-demo
     ```
 
 2. Add your database credentials to the `docker-compose.yml` file:
@@ -45,39 +74,36 @@ A Django-based web application for managing employees. The application supports 
     }
     ```
 
-4. **Build and run the Docker container:**
+4. **Add localhost to the Allowed Hosts**
+
+```python
+ALLOWED_HOSTS = [os.environ.get('CNC_ENVIRONMENT_DOMAIN'), "localhost"]
+```
+
+5. Build and run the Docker container:
 
     ```bash
     docker-compose up --build
     ```
 
-5. **Run database migrations:**
+6. Run database migrations:
 
     ```bash
     docker-compose run web python manage.py migrate
     ```
 
-6. **Access the application:**
+7. Access the application:
 
     Open your browser and navigate to `http://localhost:8000/`.
 
-## Usage
+## Resources
 
-![screenshot-1.png](images/screenshot-1.png)
+Take a look at the following for more information:
 
-1. **Add Employee:**
+* [Coherence](https://www.withcoherence.com)
+* [Why Choose Coherence](https://docs.withcoherence.com/#why-choose-coherence)
+* [Coherence Documentation](docs.withcoherence.com)
 
-    - Fill out the form with the employee's name, email, and phone number.
-    - Click "Add Employee".
+**Cloud Infrastructure On Autopilot**
 
-2. **Edit Employee:**
-
-    - Click the "Edit" button next to the employee you want to edit.
-    - Update the employee's information in the form.
-    - Click "Update".
-
-3. **Delete Employee:**
-
-    - Click the "Delete" button next to the employee you want to delete.
-
-
+_Deploy containerized and serverless apps to your own cloud in minutes, not weeks._
